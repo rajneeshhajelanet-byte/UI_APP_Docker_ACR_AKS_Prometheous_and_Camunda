@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  xmlns:camunda="http://camunda.org/schema/1.0/bpmn"
+                  id="Definitions_1"
+                  targetNamespace="http://bpmn.io/schema/bpmn">
+
+  <bpmn:process id="VoteProcess" name="Vote Processing Workflow" isExecutable="true" camunda:historyTimeToLive="P180D">
+    <bpmn:startEvent id="StartEvent_VoteSubmitted" name="Vote Submitted">
+      <bpmn:outgoing>Flow_StoreVote</bpmn:outgoing>
+    </bpmn:startEvent>
+
+    <bpmn:serviceTask id="ServiceTask_StoreVote" name="Store Vote" camunda:type="external" camunda:topic="vote-processing">
+      <bpmn:incoming>Flow_StoreVote</bpmn:incoming>
+      <bpmn:outgoing>Flow_ProcessVote</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="ServiceTask_ProcessVote" name="Process Vote" camunda:type="external" camunda:topic="process-vote">
+      <bpmn:incoming>Flow_ProcessVote</bpmn:incoming>
+      <bpmn:outgoing>Flow_StoreResult</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="ServiceTask_StoreResult" name="Store Result" camunda:type="external" camunda:topic="store-result">
+      <bpmn:incoming>Flow_StoreResult</bpmn:incoming>
+      <bpmn:outgoing>Flow_EndEvent</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:endEvent id="EndEvent_ResultDisplayed" name="Result Displayed">
+      <bpmn:incoming>Flow_EndEvent</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <bpmn:sequenceFlow id="Flow_StoreVote" sourceRef="StartEvent_VoteSubmitted" targetRef="ServiceTask_StoreVote"/>
+    <bpmn:sequenceFlow id="Flow_ProcessVote" sourceRef="ServiceTask_StoreVote" targetRef="ServiceTask_ProcessVote"/>
+    <bpmn:sequenceFlow id="Flow_StoreResult" sourceRef="ServiceTask_ProcessVote" targetRef="ServiceTask_StoreResult"/>
+    <bpmn:sequenceFlow id="Flow_EndEvent" sourceRef="ServiceTask_StoreResult" targetRef="EndEvent_ResultDisplayed"/>
+  </bpmn:process>
+
+  <!-- Diagram layout -->
+  <bpmndi:BPMNDiagram id="BPMNDiagram_VoteProcess">
+    <bpmndi:BPMNPlane id="BPMNPlane_VoteProcess" bpmnElement="VoteProcess">
+      <bpmndi:BPMNShape id="Shape_StartEvent" bpmnElement="StartEvent_VoteSubmitted">
+        <dc:Bounds x="100" y="100" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_StoreVote" bpmnElement="ServiceTask_StoreVote">
+        <dc:Bounds x="200" y="90" width="100" height="80"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_ProcessVote" bpmnElement="ServiceTask_ProcessVote">
+        <dc:Bounds x="350" y="90" width="100" height="80"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_StoreResult" bpmnElement="ServiceTask_StoreResult">
+        <dc:Bounds x="500" y="90" width="100" height="80"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_EndEvent" bpmnElement="EndEvent_ResultDisplayed">
+        <dc:Bounds x="650" y="100" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNEdge id="Edge_Flow_StoreVote" bpmnElement="Flow_StoreVote">
+        <di:waypoint x="136" y="118"/>
+        <di:waypoint x="200" y="130"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_ProcessVote" bpmnElement="Flow_ProcessVote">
+        <di:waypoint x="300" y="130"/>
+        <di:waypoint x="350" y="130"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_StoreResult" bpmnElement="Flow_StoreResult">
+        <di:waypoint x="450" y="130"/>
+        <di:waypoint x="500" y="130"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_EndEvent" bpmnElement="Flow_EndEvent">
+        <di:waypoint x="600" y="130"/>
+        <di:waypoint x="650" y="118"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

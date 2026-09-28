@@ -1,0 +1,19 @@
+Connected to redis stub
+Connected to postgres stub
+dev-worker: polling redis 'votes' list...
+Processed vote for 'a' by '1976f676-b514-45f0-8534-92e9edc5ea14'
+DB error, reconnecting ({'S': 'ERROR', 'V': 'ERROR', 'C': '26000', 'M': 'unnamed prepared statement does not exist', 'F': 'postgres.c', 'L': '2776', 'R': 'exec_describe_statement_message'})
+Connected to postgres stub
+Processed vote for 'a' by '1976f676-b514-45f0-8534-92e9edc5ea14'
+Processed vote for 'b' by '1976f676-b514-45f0-8534-92e9edc5ea14'
+Processed vote for 'a' by '1976f676-b514-45f0-8534-92e9edc5ea14'
+Processed vote for 'a' by '1976f676-b514-45f0-8534-92e9edc5ea14'
+Processed vote for 'a' by '1976f676-b514-45f0-8534-92e9edc5ea14'
+Processed vote for 'b' by '1976f676-b514-45f0-8534-92e9edc5ea14'
+Processed vote for 'b' by '1976f676-b514-45f0-8534-92e9edc5ea14'
+Processed vote for 'a' by '1976f676-b514-45f0-8534-92e9edc5ea14'
+Processed vote for 'b' by '1976f676-b514-45f0-8534-92e9edc5ea14'
+Processed vote for 'b' by '1976f676-b514-45f0-8534-92e9edc5ea14'
+Processed vote for 'a' by '1976f676-b514-45f0-8534-92e9edc5ea14'
+Processed vote for 'b' by '1976f676-b514-45f0-8534-92e9edc5ea14'
+Processed vote for 'a' by '1976f676-b514-45f0-8534-92e9edc5ea14'

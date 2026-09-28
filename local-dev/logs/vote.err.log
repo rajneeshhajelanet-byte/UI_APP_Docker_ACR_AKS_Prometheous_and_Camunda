@@ -1,0 +1,57 @@
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.100:5000
+Press CTRL+C to quit
+127.0.0.1 - - [27/Sep/2026 18:02:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Sep/2026 18:02:31] "GET /static/stylesheets/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [27/Sep/2026 18:02:31] "GET /favicon.ico HTTP/1.1" 404 -
+[2026-09-27 18:02:50,425] INFO in app: Received vote for a [source=direct-ui]
+127.0.0.1 - - [27/Sep/2026 18:02:50] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Sep/2026 18:02:50] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-27 22:43:06,727] INFO in app: Received vote for a [source=direct-ui]
+127.0.0.1 - - [27/Sep/2026 22:43:06] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Sep/2026 22:43:06] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [28/Sep/2026 10:29:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 10:29:45] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-28 10:29:46,728] INFO in app: Received vote for a [source=direct-ui]
+127.0.0.1 - - [28/Sep/2026 10:29:46] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 10:29:47] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-28 10:29:47,754] INFO in app: Received vote for b [source=direct-ui]
+127.0.0.1 - - [28/Sep/2026 10:29:47] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 10:29:48] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-28 12:22:05,686] INFO in app: Received vote for a [source=direct-ui]
+127.0.0.1 - - [28/Sep/2026 12:22:05] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 12:22:05] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-28 12:22:06,048] INFO in app: Received vote for a [source=direct-ui]
+127.0.0.1 - - [28/Sep/2026 12:22:06] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 12:22:06] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [28/Sep/2026 12:22:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 12:22:08] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-28 12:22:09,849] INFO in app: Received vote for a [source=direct-ui]
+127.0.0.1 - - [28/Sep/2026 12:22:09] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 12:22:10] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-28 12:22:11,094] INFO in app: Received vote for b [source=direct-ui]
+127.0.0.1 - - [28/Sep/2026 12:22:11] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 12:22:11] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-28 12:22:11,873] INFO in app: Received vote for b [source=direct-ui]
+127.0.0.1 - - [28/Sep/2026 12:22:11] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 12:22:12] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-28 12:22:12,531] INFO in app: Received vote for a [source=direct-ui]
+127.0.0.1 - - [28/Sep/2026 12:22:12] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 12:22:12] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-28 12:22:13,835] INFO in app: Received vote for b [source=direct-ui]
+127.0.0.1 - - [28/Sep/2026 12:22:13] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 12:22:14] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-28 12:22:15,229] INFO in app: Received vote for b [source=direct-ui]
+127.0.0.1 - - [28/Sep/2026 12:22:15] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 12:22:15] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-28 12:22:15,832] INFO in app: Received vote for a [source=direct-ui]
+127.0.0.1 - - [28/Sep/2026 12:22:15] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 12:22:16] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-28 12:22:16,319] INFO in app: Received vote for b [source=direct-ui]
+127.0.0.1 - - [28/Sep/2026 12:22:16] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 12:22:16] "GET /static/stylesheets/style.css HTTP/1.1" 304 -
+[2026-09-28 12:22:17,232] INFO in app: Received vote for a [source=direct-ui]
+127.0.0.1 - - [28/Sep/2026 12:22:17] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2026 12:22:17] "GET /static/stylesheets/style.css HTTP/1.1" 304 -

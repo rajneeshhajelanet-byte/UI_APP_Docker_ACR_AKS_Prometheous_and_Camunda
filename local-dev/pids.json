@@ -1,0 +1,7 @@
+﻿{
+    "redis_stub":  32048,
+    "vote":  24184,
+    "result":  19560,
+    "dev_worker":  8484,
+    "pg_stub":  2492
+}

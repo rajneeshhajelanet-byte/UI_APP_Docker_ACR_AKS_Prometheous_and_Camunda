@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vote</title>
+  <link rel="stylesheet" href="/static/stylesheets/style.css">
+</head>
+<body{% if vote %} class="option-{{ vote }}"{% endif %}>
+  <div class="voting">
+    <div class="box">
+      <h1>Get your vote counted!</h1>
+      <form method="post">
+        <div class="option-a">
+          <button type="submit" name="vote" value="{{ option_a }}">{{ option_a }}</button>
+        </div>
+        <div class="option-b">
+          <button type="submit" name="vote" value="{{ option_b }}">{{ option_b }}</button>
+        </div>
+      </form>
+      {% if vote %}
+        <p class="voted">You voted for <strong>{{ vote }}</strong></p>
+      {% endif %}
+      <p class="host">Processed by: {{ hostname }}</p>
+    </div>
+  </div>
+</body>
+</html>

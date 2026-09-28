@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logs-proxy
+  labels:
+    app: logs-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logs-proxy
+  template:
+    metadata:
+      labels:
+        app: logs-proxy
+    spec:
+      serviceAccountName: logs-proxy
+      containers:
+        - name: logs-proxy
+          image: obsdemoacr01.azurecr.io/logs-proxy:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: PROM_QUERY_ENDPOINT
+              value: "https://defaultazuremonitorworkspace-eastus-abcsbnaxa9ewczb5.eastus.prometheus.monitor.azure.com"
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi

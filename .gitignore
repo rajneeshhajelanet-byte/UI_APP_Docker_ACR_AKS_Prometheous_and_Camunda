@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# Build artifacts / pre-built container images (not source)
+*.tar
+result.tar
+vote.tar
+
+# Third-party binaries (download separately, not part of the source)
+kind.exe
+helm-v3.15.4-windows-amd64.zip
+helm-v3.15.4-windows-amd64/
+windows-amd64/
+
+# Local dev stack generated data
+local-dev/pgdata/
+local-dev/logs/
+local-dev/*.txt
+local-dev/aks_log_token.txt
+
+# Logs
+*-logs.txt
+*_logs.txt
+camunda-errors*.log
+loadtest_logs.txt
+result-logs.txt
+vote-loki.json

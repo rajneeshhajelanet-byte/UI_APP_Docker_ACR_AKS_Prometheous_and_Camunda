@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+  labels:
+    app: worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      containers:
+        - name: worker
+          image: obsdemoacr01.azurecr.io/worker:latest
+          env:
+            - name: REDIS_HOST
+              value: redis
+            - name: DATABASE_URL
+              value: "Host=db;Username=postgres;Password=postgres;Database=postgres;Ssl Mode=Disable"
+          resources:
+            requests:
+              cpu: 50m
+              memory: 96Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi

@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: loadtest
+  namespace: default
+spec:
+  containers:
+  - name: hey
+    image: williamyeh/hey
+    args:
+      - "-n"
+      - "100"
+      - "-c"
+      - "300"
+      - "-m"
+      - "POST"
+      - "-H"
+      - "Content-Type: application/x-www-form-urlencoded"
+      - "-d"
+      - "vote=a"
+      - "http://vote.default.svc.cluster.local:80/"
+  restartPolicy: Never
